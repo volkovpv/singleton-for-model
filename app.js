@@ -13,7 +13,14 @@ let Singleton = require('./singleton');
 
 let app = express();
 
-let singleton = new Singleton({prop: 'app'});
+let config = {
+    dbName  : 'livedb',
+    userName: 'petrsql',
+    password: 'petrsql',
+    host    : 'localhost',
+    port    : 5432,
+};
+let singleton = new Singleton(config);
 
 console.log(`singleton.counter: ${singleton.counter} and singleton.prop: ${singleton.prop}`);
 
